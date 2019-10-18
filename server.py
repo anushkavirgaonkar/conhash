@@ -55,7 +55,7 @@ def handle_client(client):  # Takes client socket as argument.
         print("Keys : ")
         print(keydict[curr_node])
         for key in keydict[curr_node]:
-            print(key," is mapped to ", get_machine(clients_hash,key), " with hash ", clients_hash[index][1])
+            print(key," is mapped to ", get_machine(clients_hash,key), " with hash ", my_hash(get_machine(clients_hash,key).encode()))
             new_node = get_machine(clients_hash,key)
             if(new_node!=curr_node):
                 keydict[new_node].append(key)
